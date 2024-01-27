@@ -11,8 +11,11 @@
 11. OnTriggerStay - the script will be called each frame. OnTriggerEnter - just onces, when the object touched the Trigger. Create trigger - inside object
 12. Game play - pause (2 horizontal lines) - next button - game step by step
 13. Чтоб не подставлять каждый раз ImageTarget - disable AR camera, in Image Target disable IT Behaviour + Default Observer Event Handler 
-
-
+14. Canvas - Screen space overlay - camera - will be attached to the screen and don't move. World space - will move with camera
+15. Better to choose Canvas - Screen space overlay - потому что тогда кнопки на переднем плане
+16. Нужно отключить Mesh Collider у Drone, когда запустим Play
+17. AR camera - First Target optimal 
+18. Чтобы кнопка срабатывала ее нужно ставить ниже Panel
 
 using UnityEngine;
 

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\RockPileController.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Drone.cs" />
+    <Compile Include="Assets\Sci-Fi UI\Demo_Assets\scripts\GUI_Demo.cs" />
     <Compile Include="Assets\Scripts\TIA\Project\ElevatorDown.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\OxygenTank.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Astronaut.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\NavMeshManager.cs" />
     <Compile Include="Assets\Scripts\RollingSphereScriprts\SphereMovement.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\InteractionHelpers\DrillController.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\MenuController.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\StateMachineBehaviours\AugmentationStateMachineBehaviour.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\ModularBillBoard.cs" />
     <Compile Include="Assets\Scripts\TIA\Project\PipeBooster.cs" />
