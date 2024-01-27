@@ -71,6 +71,7 @@
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\InteractionHelpers\FadeObject.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\GaugeValueDisplay.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\NavMeshManager.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\ObjectMovementController.cs" />
     <Compile Include="Assets\Scripts\RollingSphereScriprts\SphereMovement.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\InteractionHelpers\DrillController.cs" />
     <Compile Include="Assets\Scripts\TIA\Project\MenuController.cs" />
