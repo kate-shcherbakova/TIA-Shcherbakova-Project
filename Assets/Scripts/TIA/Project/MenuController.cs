@@ -7,24 +7,41 @@ public class MenuController : MonoBehaviour
 {
 
     public GameObject[] pages; // Массив страниц
+    public GameObject[] prefabs; // Массив prefab для каждой страницы
 
     private int currentPageIndex = 0; // Индекс текущей страницы
-
-    public GameObject[] prefabs; // Массив prefab для каждой страницы
     private GameObject currentPrefab;
     private GameObject objectFromPrefab;
     private ObjectMovementController objectMovementController;
 
-
-    // private Canvas canvas;
+    private int numberOfObjectsUsed = 0;
+    private FinishController finishController;
 
     private void Start()
     {
         // canvas = GetComponent<Canvas>();
         objectMovementController = GetComponent<ObjectMovementController>();
+        finishController = GameObject.FindObjectOfType<FinishController>();
 
         // Изначально делаем активной только первую страницу
+
+        bool isHard = PlayerPrefs.GetInt("hard", 0) == 1;
+
+        if (isHard)
+        {
+            currentPageIndex = UnityEngine.Random.Range(0, pages.Length);
+        }
+
         ShowPage(currentPageIndex);
+
+        if (isHard)
+        {
+            GameObject menuRightButton = pages[currentPageIndex].transform.Find("Panel").gameObject.transform.Find("MenuRightButton").gameObject;
+            menuRightButton.SetActive(false);
+            GameObject menuLeftButton = pages[currentPageIndex].transform.Find("Panel").gameObject.transform.Find("MenuLeftButton").gameObject;
+            menuLeftButton.SetActive(false);
+        }
+
     }
 
     public void OnSelectButtonClicked()
@@ -114,6 +131,9 @@ public class MenuController : MonoBehaviour
                     break;
             }
 
+            // For "Finish"
+            numberOfObjectsUsed++;
+            finishController.SetNumberOfObjectsUsed(numberOfObjectsUsed);
         }
         else
         {
@@ -147,6 +167,7 @@ public class MenuController : MonoBehaviour
             currentPrefab = prefabs[pageIndex];
 
         }
+
     }
 
     //--------------------------------------------------------------------------------------------

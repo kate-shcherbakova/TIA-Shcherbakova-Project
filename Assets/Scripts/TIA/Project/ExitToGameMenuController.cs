@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class StopButtonController : MonoBehaviour
+public class ExitToGameMenuController : MonoBehaviour
 {
     public Button stopButton;
 

@@ -73,7 +73,6 @@
     <Compile Include="Assets\Scripts\TIA\ARObjectRotation.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\InteractionHelpers\FadeObject.cs" />
     <Compile Include="Assets\Scripts\TIA\Project\StartButtonController.cs" />
-    <Compile Include="Assets\Scripts\TIA\Project\StopButtonController.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\GaugeValueDisplay.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\NavMeshManager.cs" />
     <Compile Include="Assets\Scripts\TIA\Project\ObjectMovementController.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Augmentation.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\ImageValueDisplay.cs" />
     <Compile Include="Assets\Scripts\ChangingObjectsScripts\ChangingObjectsEventHandler.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\ExitToGameMenuController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Common\TextMeshPro\Resources\Shaders\TMPro.cginc" />

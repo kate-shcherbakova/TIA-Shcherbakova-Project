@@ -12,22 +12,20 @@ public class GameMenuController : MonoBehaviour
     void Start()
     {
         // Привязываем методы к событиям кнопок
-        easyLevelButton.onClick.AddListener(OpenEasyLevel);
-        hardLevelButton.onClick.AddListener(OpenHardLevel);
+        easyLevelButton.onClick.AddListener(() => LoadLevel(false));
+        hardLevelButton.onClick.AddListener(() => LoadLevel(true));
         gameRulesButton.onClick.AddListener(OpenGameRules);
         exitButton.onClick.AddListener(ExitGame);
     }
 
-    void OpenEasyLevel()
+    void LoadLevel(bool isHard)
     {
-        // Загружаем сцену EasyLevel
-        SceneManager.LoadScene("EasyLevel");
-    }
+        // Сохраняем параметр isHard в PlayerPrefs
+        PlayerPrefs.SetInt("hard", isHard ? 1 : 0);
+        PlayerPrefs.Save();
 
-    void OpenHardLevel()
-    {
-        // Выводим в консоль сообщение
-        Debug.Log("Hard level scene should be opened");
+        // Загружаем сцену Level
+        SceneManager.LoadScene("Level");
     }
 
     void OpenGameRules()
