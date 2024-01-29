@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\RockPileController.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\FinishController.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Drone.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\TimerController.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\GameMenuController.cs" />
     <Compile Include="Assets\Sci-Fi UI\Demo_Assets\scripts\GUI_Demo.cs" />
     <Compile Include="Assets\Scripts\TIA\Project\ElevatorDown.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\OxygenTank.cs" />
@@ -69,6 +72,8 @@
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Fissure.cs" />
     <Compile Include="Assets\Scripts\TIA\ARObjectRotation.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\InteractionHelpers\FadeObject.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\StartButtonController.cs" />
+    <Compile Include="Assets\Scripts\TIA\Project\StopButtonController.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\GaugeValueDisplay.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\AreaTarget\NavMeshManager.cs" />
     <Compile Include="Assets\Scripts\TIA\Project\ObjectMovementController.cs" />

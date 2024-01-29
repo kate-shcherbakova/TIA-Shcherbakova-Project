@@ -99,6 +99,7 @@ public class PipeController : MonoBehaviour
         }
     }
 
+    /*
     private void MoveDroneInPipe()
     {
         // Получаем направление от начала к концу трубы
@@ -109,5 +110,35 @@ public class PipeController : MonoBehaviour
 
         // Перемещаем Drone вдоль направления с установленной скоростью
         transform.Translate(pipeDirection * pipeSpeed * Time.deltaTime, Space.World);
+    } */
+
+
+    // Чтобы дрон летел строго от начала трубы к концу по линии
+    private void MoveDroneInPipe()
+    {
+        // Получаем текущую позицию трубы
+        Vector3 currentPosition = transform.position;
+
+        // Получаем направление от начала к концу трубы
+        Vector3 pipeDirection = endTrigger.position - startTrigger.position;
+
+        // Нормализуем направление, чтобы получить единичный вектор
+        pipeDirection.Normalize();
+
+        // Вычисляем целевую позицию (конечную точку в трубе)
+        Vector3 targetPosition = startTrigger.position + pipeDirection * Vector3.Distance(startTrigger.position, endTrigger.position);
+
+        // Используем линейную интерполяцию для перемещения Drone от текущей позиции к целевой
+        transform.position = Vector3.Lerp(currentPosition, targetPosition, Time.deltaTime * pipeSpeed);
+
+        // Проверяем, достиг ли Drone конца трубы
+        float distanceToEnd = Vector3.Distance(transform.position, endTrigger.position);
+        if (distanceToEnd < 0.1f)
+        {
+            // Если расстояние мало, значит, Drone достиг конца трубы, останавливаем движение
+            isDroneInside = false;
+        }
     }
+
+
 }

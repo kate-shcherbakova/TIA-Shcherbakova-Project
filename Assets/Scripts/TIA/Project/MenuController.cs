@@ -7,6 +7,7 @@ public class MenuController : MonoBehaviour
 {
 
     public GameObject[] pages; // Массив страниц
+
     private int currentPageIndex = 0; // Индекс текущей страницы
 
     public GameObject[] prefabs; // Массив prefab для каждой страницы
@@ -15,11 +16,11 @@ public class MenuController : MonoBehaviour
     private ObjectMovementController objectMovementController;
 
 
-    private Canvas canvas;
+    // private Canvas canvas;
 
     private void Start()
     {
-        canvas = GetComponent<Canvas>();
+        // canvas = GetComponent<Canvas>();
         objectMovementController = GetComponent<ObjectMovementController>();
 
         // Изначально делаем активной только первую страницу
@@ -49,7 +50,8 @@ public class MenuController : MonoBehaviour
             }
 
             // Устанавливаем позицию перед AR камерой
-            float distanceFromCamera = 1.0f; // Замените на ваше значение
+            // float distanceFromCamera = 0.5f; // Замените на ваше значение
+            float distanceFromCamera = 5.0f; // Замените на ваше значение
 
             // Учитываем размеры объекта, чтобы установить его середину перед камерой по оси x
             float objectWidth = objectFromPrefab.GetComponent<Renderer>().bounds.size.x;
@@ -57,20 +59,59 @@ public class MenuController : MonoBehaviour
 
             objectFromPrefab.transform.position = position;
 
-            // Устанавливаем поворот PipeBooster
-            if (currentPrefab.name == "PipeBooster")
+            // Устанавливаем поворот
+            // Используем switch-case для определения правильного поворота
+            switch (pages[currentPageIndex].name)
             {
-                position.x = Camera.main.transform.position.x + Camera.main.transform.forward.x * distanceFromCamera - objectWidth / 2;
-                objectFromPrefab.transform.position = position;
-                objectFromPrefab.transform.localRotation = Quaternion.Euler(90f, 90f, 0f);
-            }
-            if (currentPrefab.name == "Elevator")
-            {
-                objectFromPrefab.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
-            }
-            if (currentPrefab.name == "Platform")
-            {
-                objectFromPrefab.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                case "PagePipe":
+                    if (currentPrefab.name == "PipeBooster")
+                    {
+                        position.x = Camera.main.transform.position.x + Camera.main.transform.forward.x * distanceFromCamera - objectWidth / 2;
+                        objectFromPrefab.transform.position = position;
+                        objectFromPrefab.transform.localRotation = Quaternion.Euler(90f, 90f, 0f);
+                    }
+                    break;
+
+                case "PagePipeInverse":
+                    if (currentPrefab.name == "PipeBooster")
+                    {
+                        position.x = Camera.main.transform.position.x + Camera.main.transform.forward.x * distanceFromCamera + objectWidth / 2;
+                        objectFromPrefab.transform.position = position;
+                        objectFromPrefab.transform.localRotation = Quaternion.Euler(-90f, 90f, 0f);
+                    }
+                    break;
+
+                case "PageElevator":
+                    if (currentPrefab.name == "Elevator")
+                    {
+                        objectFromPrefab.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+                    }
+                    break;
+
+                case "PagePlatform":
+                    if (currentPrefab.name == "Platform")
+                    {
+                        objectFromPrefab.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                    }
+                    break;
+
+                case "PagePlatformMinus":
+                    if (currentPrefab.name == "Platform")
+                    {
+                        objectFromPrefab.transform.localRotation = Quaternion.Euler(0f, -20f, 0f);
+                    }
+                    break;
+
+                case "PagePlatformPlus":
+                    if (currentPrefab.name == "Platform")
+                    {
+                        objectFromPrefab.transform.localRotation = Quaternion.Euler(0f, 20f, 0f);
+                    }
+                    break;
+
+                default:
+                    Debug.LogError("Unhandled page: " + pages[currentPageIndex].name);
+                    break;
             }
 
         }
@@ -83,6 +124,7 @@ public class MenuController : MonoBehaviour
 
     public void OnMenuRightButtonClicked()
     {
+        objectFromPrefab = null;
         // При нажатии кнопки вправо переключаемся на следующую страницу
         currentPageIndex = (currentPageIndex + 1) % pages.Length;
         ShowPage(currentPageIndex);
@@ -90,6 +132,7 @@ public class MenuController : MonoBehaviour
 
     public void OnMenuLeftButtonClicked()
     {
+        objectFromPrefab = null;
         // При нажатии кнопки влево переключаемся на предыдущую страницу
         currentPageIndex = (currentPageIndex - 1 + pages.Length) % pages.Length;
         ShowPage(currentPageIndex);
@@ -110,83 +153,83 @@ public class MenuController : MonoBehaviour
 
     public void OnUpButtonClicked()
     {
-        if (currentPrefab != null)
+        if ((currentPrefab != null) && (objectFromPrefab != null))
         {
             // Запускаем плавное движение только что созданного объекта вверх по оси Z
             objectMovementController.MoveObjectUp(objectFromPrefab);
         }
         else
         {
-            Debug.LogError("Prefab not assigned for the current page.");
+            // Debug.Log("Prefab not assigned for the current page.");
         }
     }
 
     public void OnDownButtonClicked()
     {
-        if (currentPrefab != null)
+        if ((currentPrefab != null) && (objectFromPrefab != null))
         {
             // Запускаем плавное движение только что созданного объекта вниз по оси Z
             objectMovementController.MoveObjectDown(objectFromPrefab);
         }
         else
         {
-            Debug.LogError("Prefab not assigned for the current page.");
+            // Debug.Log("Prefab not assigned for the current page.");
         }
     }
 
     // Добавьте следующий метод в класс MenuController
     public void OnRightButtonClicked()
     {
-        if (currentPrefab != null)
+        if ((currentPrefab != null) && (objectFromPrefab != null))
         {
             // Запускаем плавное движение только что созданного объекта вправо по оси X
             objectMovementController.MoveObjectRight(objectFromPrefab);
         }
         else
         {
-            Debug.LogError("Prefab not assigned for the current page.");
+            // Debug.Log("Prefab not assigned for the current page.");
         }
     }
 
     // Добавьте следующий метод в класс MenuController
     public void OnLeftButtonClicked()
     {
-        if (currentPrefab != null)
+        if ((currentPrefab != null) && (objectFromPrefab != null))
         {
             // Запускаем плавное движение только что созданного объекта влево по оси X
             objectMovementController.MoveObjectLeft(objectFromPrefab);
         }
         else
         {
-            Debug.LogError("Prefab not assigned for the current page.");
+            // Debug.Log("Prefab not assigned for the current page.");
         }
     }
 
     // Добавьте следующий метод в класс MenuController
     public void OnCloserButtonClicked()
     {
-        if (currentPrefab != null)
+        if ((currentPrefab != null) && (objectFromPrefab != null))
         {
             // Запускаем плавное движение только что созданного объекта ближе по оси Y
             objectMovementController.MoveObjectCloser(objectFromPrefab);
         }
         else
         {
-            Debug.LogError("Prefab not assigned for the current page.");
+            // Debug.Log("Prefab not assigned for the current page.");
         }
     }
 
     // Добавьте следующий метод в класс MenuController
     public void OnFartherButtonClicked()
     {
-        if (currentPrefab != null)
+        if ((currentPrefab != null) && (objectFromPrefab != null))
         {
             // Запускаем плавное движение только что созданного объекта дальше по оси Y
             objectMovementController.MoveObjectFarther(objectFromPrefab);
         }
         else
         {
-            Debug.LogError("Prefab not assigned for the current page.");
+            // Debug.Log("Prefab not assigned for the current page.");
         }
     }
 
