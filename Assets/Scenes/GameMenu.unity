@@ -8920,8 +8920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: 75}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -140, y: 140}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633879181
 MonoBehaviour:
@@ -8943,7 +8943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Close game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9121512ddd4b7224dbd81d289261bf73, type: 2}
   m_sharedMaterial: {fileID: -3570805514203992020, guid: 9121512ddd4b7224dbd81d289261bf73,
@@ -9769,6 +9769,7 @@ MonoBehaviour:
   startButton: {fileID: 31158763}
   drone: {fileID: 0}
   menu: {fileID: 0}
+  stopButton: {fileID: 0}
 --- !u!114 &1845989419
 MonoBehaviour:
   m_ObjectHideFlags: 0

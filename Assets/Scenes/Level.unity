@@ -25767,7 +25767,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729451952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 845932624}
+        m_TargetAssemblyTypeName: ExitToGameMenuController, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &729451952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26563,7 +26575,6 @@ GameObject:
   - component: {fileID: 845932620}
   - component: {fileID: 845932623}
   - component: {fileID: 845932621}
-  - component: {fileID: 845932622}
   - component: {fileID: 845932624}
   m_Layer: 5
   m_Name: Canvas
@@ -26714,19 +26725,6 @@ MonoBehaviour:
   drone: {fileID: 1482801295}
   menu: {fileID: 928266940}
   stopButton: {fileID: 729451951}
---- !u!114 &845932622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845932614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2346103d44ad947a16d187ef623c4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stopButton: {fileID: 729451951}
 --- !u!114 &845932623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26752,7 +26750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2346103d44ad947a16d187ef623c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopButton: {fileID: 1782966424}
 --- !u!1 &846863965
 GameObject:
   m_ObjectHideFlags: 0
@@ -36643,7 +36640,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1782966425}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 845932624}
+        m_TargetAssemblyTypeName: ExitToGameMenuController, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1782966425
 MonoBehaviour:
   m_ObjectHideFlags: 0

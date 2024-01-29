@@ -1,17 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ExitToGameMenuController : MonoBehaviour
 {
-    public Button stopButton;
-
-    void Start()
-    {
-        stopButton.onClick.AddListener(ExitToMainMenu);
-    }
-
-    void ExitToMainMenu()
+    public void OnButtonClicked()
     {
         SceneManager.LoadScene("GameMenu");
     }

@@ -31,7 +31,7 @@ public class GameMenuController : MonoBehaviour
     void OpenGameRules()
     {
         // Выводим в консоль сообщение
-        Debug.Log("Game rules should be opened");
+        SceneManager.LoadScene("GameRules");
     }
 
     void ExitGame()
