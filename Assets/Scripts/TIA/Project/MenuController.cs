@@ -68,7 +68,7 @@ public class MenuController : MonoBehaviour
 
             // Устанавливаем позицию перед AR камерой
             // float distanceFromCamera = 0.5f; // Замените на ваше значение
-            float distanceFromCamera = 5.0f; // Замените на ваше значение
+            float distanceFromCamera = 2.0f; // Замените на ваше значение
 
             // Учитываем размеры объекта, чтобы установить его середину перед камерой по оси x
             float objectWidth = objectFromPrefab.GetComponent<Renderer>().bounds.size.x;

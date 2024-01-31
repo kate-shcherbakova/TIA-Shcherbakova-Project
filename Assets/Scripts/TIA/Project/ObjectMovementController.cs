@@ -4,7 +4,7 @@ using UnityEngine;
 public class ObjectMovementController : MonoBehaviour
 {
     public float moveSpeed = 0.2f;
-    public float moveDistance = 0.5f; // Изменено значение расстояния
+    public float moveDistance = 0.2f; // Изменено значение расстояния
 
     private bool isMoving = false;
     private GameObject objectToMove;

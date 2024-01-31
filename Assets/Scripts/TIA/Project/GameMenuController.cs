@@ -37,12 +37,12 @@ public class GameMenuController : MonoBehaviour
     void ExitGame()
     {
         // Закрываем приложение
-        // Application.Quit();
+        Application.Quit();
 
         // Если вы разрабатываете в редакторе Unity, то Application.Quit() может не сработать.
         // В таком случае, вы можете использовать следующую строку:
-
-        UnityEditor.EditorApplication.isPlaying = false;
+        // !!
+        // UnityEditor.EditorApplication.isPlaying = false;
     }
 
 }

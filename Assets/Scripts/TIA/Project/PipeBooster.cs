@@ -69,7 +69,7 @@ public class PipeController : MonoBehaviour
 {
     public Transform startTrigger; // Триггер начала трубы
     public Transform endTrigger; // Триггер конца трубы
-    public float pipeSpeed = 5.0f; // Скорость движения по трубе
+    public float pipeSpeed = 3.0f; // Скорость движения по трубе
 
     private bool isDroneInside = false; // Флаг для отслеживания нахождения Drone в трубе
 
